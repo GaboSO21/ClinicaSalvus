@@ -20,6 +20,7 @@ Repositorio para el proyecto del curso: Desarrollo de Aplicaciones Web y Patrone
 * * * Diagnostico 
 * Reporte
 * Administradores
+(https://github.com/GaboSO21/ClinicaSalvus/blob/main/diagrama/diagramaImg.png "Diagrama")
 ---
 ## TODO: Historias de Usuario:
 
