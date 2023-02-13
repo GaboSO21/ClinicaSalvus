@@ -10,7 +10,7 @@ Repositorio para el proyecto del curso: Desarrollo de Aplicaciones Web y Patrone
 ---
 ## TODO: Diagrama de Clases: 
 ---
-## TODO: Diagrama Entidad-Relacion:
+## Diagrama Entidad-Relacion:
 ### Entidades:  
 * Doctores
 * Paciente
@@ -18,9 +18,9 @@ Repositorio para el proyecto del curso: Desarrollo de Aplicaciones Web y Patrone
 * * Examen Fisico 
 * * * Signos Vitales
 * * * Diagnostico 
-* Reporte
+* TODO: Reporte
 * Administradores
-
+## Diagrama: 
 ![Diagrama](https://github.com/GaboSO21/ClinicaSalvus/blob/main/diagrama/diagramaImg.png?raw=true "Diagrama")
 ---
 ## TODO: Historias de Usuario:
