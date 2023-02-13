@@ -4,8 +4,11 @@ Repositorio para el proyecto del curso: Desarrollo de Aplicaciones Web y Patrone
 
 ## Contenido del proyecto:
 * Base de Datos en MySql
+* Java
 * Spring Boot
 * Patron MVC
+* HTML
+* CSS
 * Bootstrap
 ---
 ## TODO: Diagrama de Clases: 
