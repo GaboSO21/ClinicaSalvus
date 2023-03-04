@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&family=Roboto:wght@300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav{
+    background-color: #E8E2E2;
+}
+
+.nav-elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 90px;
+    list-style: none;
+}
+
+.nav-elements-li{
+    margin-right: 11%;
+}
+
+.nav-elements-li-logo{
+    margin: 0.7% 12% 0.7% 3%;
+}
+
+.nav-elements-li-last{
+    margin-right:  10%;
+}
+
+.Salvus-Logo-Nav{
+    height: 80px;
+}
+
+.nav-reference{
+    text-decoration: none;
+    color: #121212;
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+}
+
+.body1{
+    
+    background: linear-gradient(180deg, rgba(112, 185, 86, 0.438) 7%, rgba(232,226,226,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Salvus-Logo-Body{
+    margin-top: 8%;
+    height: 200px;
+}
+
+hr{
+    width: 35%;
+    height: 7px;
+    background-color: #121212;
+    border-radius: 20px;
+}
+
+.h3-text{
+    font-size: 30px;
+    color: #121212;
+}
+
+.text{
+    width: 35%;
+    font-size: 20px;
+    margin-bottom: 10%;
+}
+
+.text p{
+    text-align: center;
+    color: #121212;
+}
+
+.intern-body2{
+    background-color: rgba(232,226,226,1)
+}
