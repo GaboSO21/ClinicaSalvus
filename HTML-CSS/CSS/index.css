@@ -156,7 +156,8 @@ hr{
 .body3-part1-hr{
     width: 60%;
     height: 20px;
-    border: #121212;
+    background-color: rgb(54, 107, 35);
+    border: rgb(54, 107, 35);
 }
 
 .body3-part1-icons{
@@ -204,4 +205,39 @@ hr{
     padding-left: 20px;
     padding-top: 10px;
     border-radius: 30px;
+}
+
+.body3-part2{
+    display: flex;
+}
+
+.body3-part2-text-text1,.body3-part2-text-text2{
+    display: flex;
+    width: 70%;
+    margin-top: 50px;
+}
+
+.part2-text-text1-p{
+    width: 100%;
+    margin-left: 30px;
+}
+
+.part2-text-text1-hr{
+    height:170px;
+    width: 15px;
+    background-color: rgb(54, 107, 35);
+    border: rgb(54, 107, 35);
+}
+
+.body3-part2{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 100px;
+}
+
+.avatar-img{
+    width: 400px;
 }
