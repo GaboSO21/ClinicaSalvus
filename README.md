@@ -29,6 +29,9 @@
 ### Diagrama: 
 ![Diagrama](https://github.com/GaboSO21/ClinicaSalvus/blob/main/diagrama/diagramaImg.png?raw=true "Diagrama")
 
+## LICENSE
+
+MIT © [Gabriel Sanchez](LICENSE)
 
 
 
