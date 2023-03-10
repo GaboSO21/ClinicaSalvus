@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.proyecto.salvus.Models.Paciente;
 
-public interface PacienteRepository extends CrudRepository<Paciente, Integer> {
+public interface PacienteRepository extends CrudRepository<Paciente, String> {
 
 }
