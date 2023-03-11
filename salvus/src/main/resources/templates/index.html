@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <header th:replace="Layout/templates :: header"></header>
     <div class="body">
         <nav class="nav">
             <ul class="nav-elements">
