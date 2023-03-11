@@ -31,5 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-
-src/java/main/resources/application.properties
+salvus/src/main/resources/application.properties
