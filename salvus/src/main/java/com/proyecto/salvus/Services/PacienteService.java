@@ -1,5 +1,6 @@
 package com.proyecto.salvus.Services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.salvus.Models.Paciente;
@@ -12,7 +13,7 @@ public class PacienteService {
 
     private PacienteRepository pacienteRepository;
 
-    public PacienteService(PacienteService pacienteService) {
+    public PacienteService(PacienteRepository pacienteRepository) {
         this.pacienteRepository = pacienteRepository;
     }
 
