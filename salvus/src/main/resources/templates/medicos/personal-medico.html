@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
+    <link rel="stylesheet" th:href="@{/styles/personalM.css}" />
+
     <title>Clinica Salvus | Personal Medico</title>
   </head>
   <body>
@@ -21,13 +23,23 @@
       <div class="background-container">
         <div class="container">
           <div class="container-main-info">
-            <img th:src="@{/imgs/vazquez-jovani-image.jpg}" alt="" />
-            <h1>Nombre Apellidos</h1>
+            <img
+              class="foto"
+              th:src="@{/imgs/vazquez-jovani-image.jpg}"
+              alt=""
+            />
+            <h1 class="nombre">Nombre Apellidos</h1>
           </div>
           <div class="container-sec-info">
-            <div class="container-sec-info-especidalidades"></div>
-            <div class="container-sec-info-titulos"></div>
-            <div class="container-sec-info-servicios"></div>
+            <div class="container-sec-info-especidalidades">
+              <p>Especialidad</p>
+            </div>
+            <div class="container-sec-info-titulos">
+              <p>Titulos</p>
+            </div>
+            <div class="container-sec-info-servicios">
+              <p>Servicios</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&family=Roboto:wght@300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url("/imgs/Imagen 2.png");
+    background-size: contain;
+}
+
+.background-container{
+    background: rgb(113,185,86);
+    background: linear-gradient(176deg, rgba(113,185,86,0.7539390756302521) 7%, rgba(232,226,226,1) 100%);
+    width: 35%;
+    padding: 10% 1;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    margin: 2% auto;
+    border-radius: 40px;
+}
+.container{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5% auto;
+    background-color: #F0EEED;
+    border-radius: 30px;
+    padding: 5%;
+    padding-bottom: 1%;
+    position: relative;
+}
+
+.container-main-info{
+    justify-content: center ;
+}
+
+.foto{
+    height: 200px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.nombre{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.container-sec-info{
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+
+}
