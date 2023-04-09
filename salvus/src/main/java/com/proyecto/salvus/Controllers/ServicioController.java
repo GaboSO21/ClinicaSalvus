@@ -22,7 +22,7 @@ public class ServicioController {
     @GetMapping("/listado")
     public String listar(Model model) {
         model.addAttribute("servicio", servicioService.selectServicios());
-        return "servicios";
+        return "servicios/servicios-medicos";
     }
 
     @GetMapping("/eliminar/{idDoctor}")
