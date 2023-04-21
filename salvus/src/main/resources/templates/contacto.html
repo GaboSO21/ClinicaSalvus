@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/styles/contacto.css}" />
+
+    <title>Clinica Salvus | Personal Medico</title>
+  </head>
+  <body>
+    <header th:replace="Layout/templates :: header"></header>
+    <section class="sect">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15723.71117456888!2d-83.9245317!3d9.8564252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0dffb1b7a6dc5%3A0x345a4d1f748c927a!2sCentro%20M%C3%A9dico%20Salvus!5e0!3m2!1ses!2scr!4v1681097781684!5m2!1ses!2scr"
+          class="iframe"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="form-container">
+        <div class="form-title">
+          <h4 class="ft-title">CONTÁCTANOS</h4>
+          <p class="ft-txt">Estamos para ti. ¿Cómo podemos ayudarte?</p>
+        </div>
+        <div class="form-info">
+          <div class="form">
+            <form action="" method="post">
+              <input
+                class="form-input"
+                type="text"
+                placeholder="¿Cúal es tu nombre?"
+              /><br />
+              <input
+                class="form-input"
+                type="email"
+                placeholder="Ingresa tu correo"
+              /><br />
+              <textarea
+                class="form-input"
+                name=""
+                id="txta"
+                cols="21"
+                rows="6"
+                placeholder="Danos una descripción de tu problema"
+              ></textarea
+              ><br />
+              <input type="submit" class="sub" />
+            </form>
+          </div>
+          <div class="form-data">
+            <div id="fd1" class="form-data-data">
+              <i id="loc" class="fa-solid fa-location-dot fa-2x"></i>
+              <p class="form-data-txt">
+                Provincia de Cartago, Boulevard el Molino
+              </p>
+            </div>
+            <div class="form-data-data">
+              <i class="fa-solid fa-phone fa-2x"></i>
+              <p class="form-data-txt">2591 - 7171</p>
+            </div>
+            <div class="form-data-data">
+              <i class="fa-solid fa-envelope fa-2x"></i>
+              <p class="form-data-txt">info@salvus.cr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
