@@ -1,0 +1,81 @@
+.nav-container{
+    background-color: #F0EEED;
+    padding: 5% 0 6%;
+    width: 15%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    
+}
+
+.logo{
+    height: 100px;
+}
+
+.nav-item{
+    padding: 6% 0;
+}
+
+.content{
+    margin-left: 15%;
+    padding: 5%;
+}
+
+.card{
+    text-align: center;
+    margin: 2% 0;
+    background-color: #F0EEED;
+}
+
+
+
+.card-info{
+    background-color: #FFF;
+    display: flex;
+    padding: 2%;
+    margin: 2% 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.429);
+}
+
+.servicio-data{
+    width: 60%;
+    text-align: justify;
+}
+
+.btns{
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+}
+
+#close{
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+input{
+    margin: 2% 0;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 1%;
+}
+
+textarea{
+    margin: 2% 0;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 1%;
+}
+.guardar{
+    background-color: #198754;
+    color: #F0EEED;
+}
