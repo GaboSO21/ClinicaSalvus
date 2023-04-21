@@ -21,7 +21,7 @@ public class ServicioController {
 
     @GetMapping("/listado")
     public String listar(Model model) {
-        model.addAttribute("servicio", servicioService.selectServicios());
+        model.addAttribute("servicios", servicioService.selectServicios());
         return "servicios/servicios-medicos";
     }
 

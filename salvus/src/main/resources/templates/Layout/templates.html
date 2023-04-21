@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Templates</title>
-  </head>
-  <body>
-    <header th:fragment="header">
-      <nav class="nav">
-        <ul class="nav-elements">
-          <li class="nav-elements-li-logo">
-            <a class="nav-reference" th:href="@{/}">
-              <img
-                class="Salvus-Logo-Nav"
-                th:src="@{/imgs/Salvus-Logo.png}"
-                alt="Salvus-Logo"
-              />
-            </a>
-          </li>
-          <li class="nav-elements-li">
-            <a class="nav-reference" href="#">
-              <span class="material-symbols-outlined"> manage_accounts </span>
-            </a>
-          </li>
-          <li class="nav-elements-li">
-            <a class="nav-reference" th:href="@{/doctores/listado}">
-              <h3>PERSONAL MÉDICO</h3>
-            </a>
-          </li>
-          <li class="nav-elements-li">
-            <a class="nav-reference" th:href="@{/servicios/listado}">
-              <h3>SERVICIOS</h3>
-            </a>
-          </li>
-          <li class="nav-elements-li-last">
-            <a class="nav-reference" th:href="@{/listado}">
-              <h3>CONTÁCTO</h3>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Templates</title>
+</head>
+
+<body>
+  <header th:fragment="header">
+    <nav class="nav">
+      <ul class="nav-elements">
+        <li class="nav-elements-li-logo">
+          <a class="nav-reference" th:href="@{/}">
+            <img class="Salvus-Logo-Nav" th:src="@{/imgs/Salvus-Logo.png}" alt="Salvus-Logo" />
+          </a>
+        </li>
+        <li class="nav-elements-li">
+          <a class="nav-reference" href="#">
+            <span class="material-symbols-outlined"> manage_accounts </span>
+          </a>
+        </li>
+        <li class="nav-elements-li">
+          <a class="nav-reference" th:href="@{/doctores/listado}">
+            <h3>PERSONAL MÉDICO</h3>
+          </a>
+        </li>
+        <li class="nav-elements-li">
+          <a class="nav-reference" th:href="@{/servicios/listado}">
+            <h3>SERVICIOS</h3>
+          </a>
+        </li>
+        <li class="nav-elements-li-last">
+          <a class="nav-reference" th:href="@{/contacto}">
+            <h3>CONTÁCTO</h3>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+
 </html>

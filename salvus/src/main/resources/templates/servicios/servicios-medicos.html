@@ -1,134 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link rel="stylesheet" th:href="@{/styles/index.css}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
-    <link rel="stylesheet" th:href="@{/styles/serviciosM.css}" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" th:href="@{/styles/index.css}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <title>Clinica Salvus | Personal Medico</title>
-  </head>
-  <body>
-    <header th:replace="Layout/templates :: header"></header>
-    <section class="sec1">
-      <h2 class="sec1-title">¿Qué te ofrecemos en Salvus?</h2>
+  <link rel="stylesheet" th:href="@{/styles/serviciosM.css}" />
 
-      <div class="parent">
-        <div class="data1-container">
-          <div class="data1-title">
-            <i class="fa-solid fa-thumbtack"></i>
-            <h3>Consultas Médicas</h3>
-          </div>
-          <div class="data1-info">
-            <p>
-              Los médicos y especialistas en la clínica brindan servicios de
-              consulta médica para examinar, diagnosticar y tratar diversas
-              enfermedades y afecciones de los pacientes.
-            </p>
-          </div>
+  <title>Clinica Salvus | Personal Medico</title>
+</head>
+
+<body>
+  <header th:replace="Layout/templates :: header"></header>
+  <section class="sec1">
+    <h2 class="sec1-title">¿Qué te ofrecemos en Salvus?</h2>
+
+    <div class="parent">
+      <div th:each="servicio : ${servicios}" class="data1-container">
+        <div class="data1-title">
+          <i class="fa-solid fa-thumbtack"></i>
+          <h3>[[${servicio.nombre}]]</h3>
         </div>
-        <div class="data1-container">
-          <div class="data1-title">
-            <i class="fa-solid fa-thumbtack"></i>
-            <h3>Consultas Médicas</h3>
-          </div>
-          <div class="data1-info">
-            <p>
-              Los médicos y especialistas en la clínica brindan servicios de
-              consulta médica para examinar, diagnosticar y tratar diversas
-              enfermedades y afecciones de los pacientes.
-            </p>
-          </div>
-        </div>
-        <div class="data1-container">
-          <div class="data1-title">
-            <i class="fa-solid fa-thumbtack"></i>
-            <h3>Consultas Médicas</h3>
-          </div>
-          <div class="data1-info">
-            <p>
-              Los médicos y especialistas en la clínica brindan servicios de
-              consulta médica para examinar, diagnosticar y tratar diversas
-              enfermedades y afecciones de los pacientes.
-            </p>
-          </div>
-        </div>
-        <div class="data1-container">
-          <div class="data1-title">
-            <i class="fa-solid fa-thumbtack"></i>
-            <h3>Consultas Médicas</h3>
-          </div>
-          <div class="data1-info">
-            <p>
-              Los médicos y especialistas en la clínica brindan servicios de
-              consulta médica para examinar, diagnosticar y tratar diversas
-              enfermedades y afecciones de los pacientes.
-            </p>
-          </div>
+        <div class="data1-info">
+          <p>
+            [[${servicio.descripcion}]]
+          </p>
         </div>
       </div>
-    </section>
-    <section class="sec2">
-      <ol class="carousel__viewport">
-        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <div class="carousel-content-container">
-            <div class="carousel-content">
-              <img
-                class="carousel-img"
-                th:src="@{/imgs/radiografia.png}"
-                alt=""
-              />
-              <h3 class="carousel-txt">Radiografías</h3>
-            </div>
+  </section>
+  <section class="sec2">
+    <ol class="carousel__viewport">
+      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <div class="carousel-content-container">
+          <div class="carousel-content">
+            <img class="carousel-img" th:src="@{/imgs/radiografia.png}" alt="" />
+            <h3 class="carousel-txt">Radiografías</h3>
           </div>
-        </li>
-        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <div class="carousel-content-container">
-            <div class="carousel-content">
-              <img
-                class="carousel-img"
-                th:src="@{/imgs/Medicina General.png}"
-                alt=""
-              />
-              <h3 class="carousel-txt">Medicina General</h3>
-            </div>
+        </div>
+      </li>
+      <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <div class="carousel-content-container">
+          <div class="carousel-content">
+            <img class="carousel-img" th:src="@{/imgs/Medicina General.png}" alt="" />
+            <h3 class="carousel-txt">Medicina General</h3>
           </div>
-        </li>
-        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <div class="carousel-content-container">
-            <div class="carousel-content">
-              <img
-                class="carousel-img"
-                th:src="@{/imgs/odontologia.png}"
-                alt=""
-              />
-              <h3 class="carousel-txt">Odontologia</h3>
-            </div>
+        </div>
+      </li>
+      <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <div class="carousel-content-container">
+          <div class="carousel-content">
+            <img class="carousel-img" th:src="@{/imgs/odontologia.png}" alt="" />
+            <h3 class="carousel-txt">Odontologia</h3>
           </div>
-        </li>
-        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <div class="carousel-content-container">
-            <div class="carousel-content">
-              <img class="carousel-img" th:src="@{/imgs/cirugias.png}" alt="" />
-              <h3 class="carousel-txt">Cirugias</h3>
-            </div>
+        </div>
+      </li>
+      <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+        <div class="carousel__snapper"></div>
+        <div class="carousel-content-container">
+          <div class="carousel-content">
+            <img class="carousel-img" th:src="@{/imgs/cirugias.png}" alt="" />
+            <h3 class="carousel-txt">Cirugias</h3>
           </div>
-        </li>
-      </ol>
-    </section>
-  </body>
+        </div>
+      </li>
+    </ol>
+  </section>
+</body>
+
 </html>

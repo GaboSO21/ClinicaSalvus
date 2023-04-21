@@ -12,24 +12,26 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cedula", referencedColumnName = "cedula")
-    private Paciente cedula;
+    private String username;
 
     private String contrasenna;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idRol", referencedColumnName = "idRol")
+    private Rol idRol;
 
     public Usuario() {
 
     }
 
-    public Usuario(Paciente cedula, String contrasenna) {
-        this.cedula = cedula;
+    public Usuario(String username, String contrasenna) {
+        this.username = username;
         this.contrasenna = contrasenna;
     }
 
-    public Usuario(int idUsuario, Paciente cedula, String contrasenna) {
+    public Usuario(int idUsuario, String username, String contrasenna) {
         this.idUsuario = idUsuario;
-        this.cedula = cedula;
+        this.username = username;
         this.contrasenna = contrasenna;
     }
 
