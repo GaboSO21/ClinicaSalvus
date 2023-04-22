@@ -50,33 +50,54 @@ public class SecurityConfig {
         @Bean
         public SecurityFilterChain securityFilterChain(HttpSecurity http)
                         throws Exception {
-                http.authorizeHttpRequests((request) -> request
-                                .requestMatchers("/",
-                                                "/doctores/listado",
-                                                "/servicios/listado",
-                                                "/imgs/**",
-                                                "/styles/**",
-                                                "/webjars/**",
-                                                "/index",
-                                                "/admin",
-                                                "/admin/**")
-                                .permitAll()
-                                .requestMatchers("/contacto")
-                                .hasAnyRole("ADMIN"))
-                                // .requestMatchers(
-                                // "/cliente/eliminar/**")
-                                // .hasRole("ADMIN"))
-                                // .requestMatchers(
-                                // "/articulo/listado",
-                                // "/categoria/listado",
-                                // "/cliente/listado")
-                                // .hasRole("USER"))
-                                .formLogin((form) -> form
-                                                .passwordParameter("contrasenna")
-                                                .usernameParameter("username")
-                                                .defaultSuccessUrl("/", true)
-                                                .loginPage("/login").permitAll())
-                                .logout((logout) -> logout.permitAll());
+            http.authorizeHttpRequests((request) -> request
+                    .requestMatchers("/",
+                            "/doctores/listado",
+                            "/servicios/listado",
+                            "/imgs/**",
+                            "/styles/**",
+                            "/webjars/**",
+                            "/index"
+                    )
+                    .permitAll()
+                    .requestMatchers("/admin",
+                            "/admin/**",
+                            "/doctores/guardar",
+                            "/doctores/eliminar/**",
+                            "/servicios/guardar",
+                            "/servicios/eliminar/**",
+                            "/signos/guardar",
+                            "/diagnostico/guardar",
+                            "/expediente/guardar",
+                            "/pacientes/guardar",
+                            "/pacientes/eliminar/**",
+                            "/usuario/guardar",
+                            "/usuario/eliminar/**"
+                    )
+                    .hasRole("ADMIN")
+                    .requestMatchers("/contacto",
+                            "/usuario"
+                    )
+                    .hasAnyRole("ADMIN", "USER")
+                    )
+                    // .requestMatchers(
+                    // "/cliente/eliminar/**")
+                    // .hasRole("ADMIN"))
+                    // .requestMatchers(
+                    // "/articulo/listado",
+                    // "/categoria/listado",
+                    // "/cliente/listado")
+                    // .hasRole("USER"))
+                    .formLogin((form) -> form
+                            .passwordParameter("contrasenna")
+                            .usernameParameter("username")
+                            .defaultSuccessUrl("/", true)
+                            .loginPage("/login").permitAll())
+                    .logout((logout) -> logout
+                            .logoutSuccessUrl("/")
+                            .permitAll())
+                    .exceptionHandling(handling -> handling
+                            .accessDeniedPage("/errores/403"));
                 return http.build();
         }
 

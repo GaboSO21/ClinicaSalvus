@@ -1,6 +1,232 @@
-.nav-container{ background-color: #F0EEED; padding: 5% 0 6%; width: 100%;
-height: 100vh; text-align: center; } .logo{ height: 200px; } #home{ color:
-#198754; } .nav-txt{ font-size: 20px; } .nav-txt-container{ font-size: 20px;
-display: flex; width: 65%; margin: 0 auto; justify-content: space-between; }
-.content{ padding: 4%; margin: 0 auto; width: 40%; } a{ text-decoration: none;
-color: #F0EEED; }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" th:href="@{/styles/doctoresAdmin.css}" />
+  <title>Inicio</title>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="nav-container">
+      <div class="nav-item">
+        <img class="logo" th:src="@{/imgs/Salvus-Logo.png}" alt="" />
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-txt"><a th:href="@{/admin/pacientes}">PACIENTES</a></h3>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-txt"><a th:href="@{/admin/doctores}">DOCTORES</a></h3>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-txt"><a th:href="@{/admin/servicios}">SERVICIOS</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="main-cards">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <i class="fa-solid fa-user-doctor fa-2x"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Manejo de Pacientes</h5>
+            </div>
+            <div class="card-footer bg-success"></div>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center">
+
+          <div class="col-lg-2">
+            <div class="card">
+              <div class="card-body">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                  data-bs-target="#modalAgregarSignos">
+                  Agregar Signos
+                </button>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                  data-bs-target="#modalAgregarDiagnostico">
+                  Agregar Diagnostico
+                </button>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                  data-bs-target="#modalAgregarExpediente">
+                  Agregar Expediente
+                </button>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">
+                  Agregar Paciente
+                </button>
+              </div>
+              <div class="card-footer bg-success"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="Card-Pacientes" class="card">
+
+            <div th:each="paciente : ${pacientes}" class="card-body">
+              <div class="card-info">
+                <p>[[${paciente.cedula}]]</p>
+                <p>[[${paciente.nombre}]]</p>
+                <div class="btns">
+                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <a th:href="@{/pacientes/eliminar/}+${paciente.cedula}">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer bg-success"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Modals-Windows">
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalEditarTitle">Editar Doctor</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <form class="form" action="">
+              <input type="text" placeholder="Nombre" /><br />
+              <input type="text" placeholder="Cedula" /><br />
+              <input type="text" placeholder="Titulo" /><br />
+              <input type="text" placeholder="Especialidad" /><br />
+              <input type="text" placeholder="Servicios" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAgregarTitle">Agregar Paciente</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form" method="POST" th:action="@{/pacientes/guardar}">
+              <input type="text" placeholder="Cedula" name="cedula"><br />
+              <input type="text" placeholder="Nombre" name="nombre" /><br />
+              <input type="text" placeholder="Direccion" name="direccion" /><br />
+              <input type="text" placeholder="Telefono" name="telefono" /><br />
+              <input type="text" placeholder="Edad" name="edad" /><br />
+              <input type="text" placeholder="Sexo" name="sexo" /><br />
+              <input type="hidden" th:value="${next}"  name="idExpediente" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregarSignos" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAgregarTitle">Agregar Signos</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form" method="POST" th:action="@{/signos/guardar}">
+              <input type="number" placeholder="Frecuencia Cardiaca" name="frecCardiaca"><br />
+              <input type="number" placeholder="Frecuencia Respiratoria" name="frecRespiratoria" /><br />
+              <input type="number" placeholder="IMC" name="imc" /><br />
+              <input type="number" placeholder="Peso" name="peso" /><br />
+              <input type="number" placeholder="Temperatura" name="temperatura" /><br />
+              <input type="number" placeholder="Tension Arterial" name="tensionArterial" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregarDiagnostico" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAgregarTitle">Agregar Diagnostico</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form" method="POST" th:action="@{/diagnostico/guardar}">
+              <input type="text" placeholder="Conclusion" name="conclusion"><br />
+              <input type="text" placeholder="Pronostico" name="pronostico" /><br />
+              <input type="text" placeholder="Seguimiento" name="seguimiento" /><br />
+              <input type="text" placeholder="Tratamiento" name="tratamiento" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregarExpediente" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAgregarTitle">Agregar Expediente</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form" method="POST" th:action="@{/expediente/guardar}">
+              <input type="text" placeholder="Antecedentes" name="antecedentes"><br />
+              <input type="text" placeholder="Motivo de Consulta" name="motivoConsulta" /><br />
+              <input type="hidden" th:value="${next}" name="idSignos" /><br />
+              <input type="hidden" th:value="${next}" name="idDiagnostico" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</body>
+
+</html>

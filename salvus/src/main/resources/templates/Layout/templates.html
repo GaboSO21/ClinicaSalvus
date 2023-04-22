@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <title>Templates</title>
 </head>
 
@@ -18,7 +21,7 @@
           </a>
         </li>
         <li class="nav-elements-li">
-          <a class="nav-reference" href="#">
+          <a class="nav-reference" th:href="@{/usuario}">
             <span class="material-symbols-outlined"> manage_accounts </span>
           </a>
         </li>
@@ -36,6 +39,22 @@
           <a class="nav-reference" th:href="@{/contacto}">
             <h3>CONTÁCTO</h3>
           </a>
+        </li>
+        <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-elements-li-last">
+          <a class="nav-reference" th:href="@{/admin}">
+            <h3>ADMIN</h3>
+          </a>
+        </li>
+        <li sec:authorize="!isAuthenticated()" class="nav-elements-li-last">
+          <a class="nav-reference" th:href="@{/login}">
+            <i id="icon1" class="fa-solid fa-sharp fa-5x fa fa-sign-in"></i>
+          </a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-elements-li-last">
+          <form th:action="@{/logout}" method="POST" style="display: inline;">
+            <a href="#" onclick="this.parentNode.submit();"><i style="background-color: inherit;" id="icon1"
+                class="fa-solid fa-sharp fa-5x fa fa-sign-out"></i></a>
+          </form>
         </li>
       </ul>
     </nav>

@@ -3,6 +3,7 @@ package com.proyecto.salvus.Services;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -35,6 +36,18 @@ public class UsuarioService implements UserDetailsService {
         roles.add(new SimpleGrantedAuthority(user.getIdRol().getNombre()));
 
         return new User(user.getUsername(), user.getContrasenna(), roles);
+    }
+
+    public List<Usuario> selectUsuarios() {
+        return (List<Usuario>) usuarioRepository.findAll();
+    }
+
+    public void saveUser(Usuario usuario) {
+        usuarioRepository.save(usuario);
+    }
+
+    public void deleteUser(Usuario usuario) {
+        usuarioRepository.delete(usuario);
     }
 
 }

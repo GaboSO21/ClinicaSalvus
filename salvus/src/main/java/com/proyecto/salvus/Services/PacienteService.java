@@ -20,15 +20,19 @@ public class PacienteService {
         return (List<Paciente>) pacienteRepository.findAll();
     }
 
-    public Paciente getServicio(Paciente paciente) {
+    public Paciente getPaciente(Paciente paciente) {
         return pacienteRepository.findById(paciente.getCedula()).orElse(null);
+    }
+
+    public Paciente getPacienteCedula(String cedula) {
+        return pacienteRepository.findById(cedula).orElse(null);
     }
 
     public void deletePaciente(Paciente paciente) {
         pacienteRepository.delete(paciente);
     }
 
-    public void saveServicio(Paciente paciente) {
+    public void savePaciente(Paciente paciente) {
         pacienteRepository.save(paciente);
     }
 

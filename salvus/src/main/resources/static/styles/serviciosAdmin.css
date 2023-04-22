@@ -79,3 +79,11 @@ textarea{
     background-color: #198754;
     color: #F0EEED;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: #198754;
+}

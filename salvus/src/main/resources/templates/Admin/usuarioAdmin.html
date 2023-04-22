@@ -43,7 +43,7 @@
               <i class="fa-solid fa-house-medical fa-2x"></i>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Manejo de Servicios</h5>
+              <h5 class="card-title">Manejo de Usuarios</h5>
             </div>
             <div class="card-footer bg-success"></div>
           </div>
@@ -52,7 +52,7 @@
           <div class="card">
             <div class="card-body">
               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">
-                Agregar Servicio
+                Agregar Usuario
               </button>
             </div>
             <div class="card-footer bg-success"></div>
@@ -64,13 +64,13 @@
         <div class="col-lg-9 mx-auto">
           <div id="Card-Pacientes" class="card">
 
-            <div th:each="servicio : ${servicios}" class="card-body">
+            <div th:each="usuario : ${usuarios}" class="card-body">
               <div class="card-info">
                 <div class="servicio-data">
-                  <h3>[[${servicio.nombre}]]</h3>
+                  <h3>[[${usuario.username}]]</h3>
                   <br />
                   <p>
-                    [[${servicio.descripcion}]]
+                    [[${usuario.idRol.nombre}]]
                   </p>
                 </div>
                 <div class="btns">
@@ -78,7 +78,7 @@
                     Editar
                   </button>
                   <button type="button" class="btn btn-danger">
-                    <a th:href="@{/servicios/eliminar/}+${servicio.idServicio}" class="btn btn-danger">
+                    <a th:href="@{/usuario/eliminar/}+${usuario.idUsuario}" class="btn btn-danger">
                       <i class="fas fa-trash"></i>
                     </a>
                   </button>
@@ -118,38 +118,15 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="modalAgregarTitle">
-              Agregar Servicio
+              Agregar Usuario
             </h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="form" method="POST" th:action="@{/servicios/guardar}">
-              <input name="nombre" type="text" placeholder="Nombre del Servicio" /><br />
-              <textarea name="descripcion" cols="30" rows="10" placeholder="Descripcion"></textarea><br />
-              <input class="guardar" type="submit" value="Guardar" /><br />
-            </form>
-          </div>
-          <hr />
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="modalAgregarExpediente" tabindex="-1" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modalAgregarTitle">
-              Agregar Expediente
-            </h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="form" method="POST" th:action="@{/servicios/guardar}">
-              <input name="conclusion" type="text" placeholder="Conclusion" /><br />
-              <input name="pronostico" type="text" placeholder="Pronostico" /><br />
-              <input name="seguimiento" type="text" placeholder="Seguimiento" /><br />
-              <input name="tratamiento" type="text" placeholder="Tratamiento" /><br />
+            <form class="form" method="POST" th:action="@{/usuario/guardar}">
+              <input name="username" type="text" placeholder="Cedula" /><br />
+              <input name="contrasenna" type="text" placeholder="Password" /><br />
+              <input type="hidden" th:value="${userRol}" name="idRol" /><br />
               <input class="guardar" type="submit" value="Guardar" /><br />
             </form>
           </div>

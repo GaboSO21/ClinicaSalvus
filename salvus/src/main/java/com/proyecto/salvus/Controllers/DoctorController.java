@@ -28,7 +28,7 @@ public class DoctorController {
     @GetMapping("/eliminar/{idDoctor}")
     public String eliminar(Doctor doctor) {
         doctorService.deleteDoctor(doctor);
-        return "redirect:/listado";
+        return "redirect:/admin/doctores";
     }
 
     @GetMapping("/editar/{idDoctor}")
@@ -40,7 +40,7 @@ public class DoctorController {
     @PostMapping("/guardar")
     public String agregar(Doctor doctor) {
         doctorService.saveDoctor(doctor);
-        return "redirect:/listado";
+        return "redirect:/admin/doctores";
     }
 
 }

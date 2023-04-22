@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <div class="nav">
     <div class="nav-container">
       <div class="nav-item">
@@ -26,10 +27,10 @@
         <h3 class="nav-txt"><a th:href="@{/admin/pacientes}">PACIENTES</a></h3>
       </div>
       <div class="nav-item">
-        <h3 class="nav-txt">DOCTORES</h3>
+        <h3 class="nav-txt"><a th:href="@{/admin/doctores}">DOCTORES</a></h3>
       </div>
       <div class="nav-item">
-        <h3 class="nav-txt">SERVICIOS</h3>
+        <h3 class="nav-txt"><a th:href="@{/admin/servicios}">SERVICIOS</a></h3>
       </div>
     </div>
   </div>
@@ -69,10 +70,11 @@
                 <p>[[${doctor.nombre}]] [[${doctor.primerApellido}]] [[${doctor.segundoApellido}]]</p>
                 <div class="btns">
                   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                    Editar
                   </button>
                   <button type="button" class="btn btn-danger">
-                    Eliminar
+                    <a th:href="@{/doctores/eliminar/}+${doctor.idDoctor}" class="btn btn-danger">
+                      <i class="fas fa-trash"></i>
+                    </a>
                   </button>
                 </div>
               </div>
@@ -94,6 +96,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+
             <form class="form" action="">
               <input type="text" placeholder="Nombre" /><br />
               <input type="text" placeholder="Cedula" /><br />
@@ -103,6 +106,7 @@
               <input class="guardar" type="submit" value="Guardar" /><br />
             </form>
           </div>
+
         </div>
       </div>
     </div>
@@ -115,19 +119,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="form" action="">
-              <input type="text" placeholder="Nombre" /><br />
-              <input type="text" placeholder="Cedula" /><br />
-              <input type="text" placeholder="Titulo" /><br />
-              <input type="text" placeholder="Especialidad" /><br />
-              <input type="text" placeholder="Servicios" /><br />
+            <form class="form" method="POST" th:action="@{/doctores/guardar}">
+              <input type="text" placeholder="Nombre" name="nombre"><br />
+              <input type="text" placeholder="Primer Apellido" name="primerApellido" /><br />
+              <input type="text" placeholder="Segundo Apellido" name="segundoApellido" /><br />
+              <input type="text" placeholder="Titulo" name="titulos" /><br />
+              <input type="text" placeholder="Especialidad" name="especialidades" /><br />
+              <input type="text" placeholder="Servicios" name="servicios" /><br />
               <input class="guardar" type="submit" value="Guardar" /><br />
             </form>
+            <hr />
           </div>
-          <hr />
         </div>
       </div>
-    </div>
   </section>
 </body>
 
