@@ -9,8 +9,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <link rel="stylesheet" th:href="@{/styles/index.css}" />
     <link rel="stylesheet" th:href="@{/styles/user.css}" />
+    <link rel="stylesheet" th:href="@{/styles/index.css}" />
 
     <title>Clinica Salvus | Personal Medico</title>
 </head>
@@ -19,7 +19,68 @@
 
     <header th:replace="Layout/templates :: header"></header>
 
+    <section class="sect">
+        <div class="map">
 
+            <h2>[[#{usuario.titulo}]]</h2>
+            <hr class="hr">
+            <h3>[[#{usuario.nombre}]]: [[${usuario.nombre}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.cedula}]]: [[${usuario.cedula}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.correo}]]: [[${usuario.correo}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.direccion}]]: [[${usuario.direccion}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.telefono}]]: [[${usuario.telefono}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.edad}]]: [[${usuario.edad}]]</h3>
+
+            <hr class="hr">
+            <h3>[[#{usuario.sexo}]]: [[${usuario.sexo}]]</h3>
+
+        </div>
+        <div class="form-container">
+            <div class="form-title">
+                <h4 class="ft-title">[[#{expediente.titulo}]]</h4>
+            </div>
+            <div class="form-info">
+                <div class="form">
+
+                    <h3>[[#{expediente.antecedentes}]]: [[${expediente.antecedentes}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.motivo}]]: [[${expediente.motivoConsulta}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.signos.imc}]]: [[${signos.imc}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.signos.cardiaca}]]: [[${signos.frecCardiaca}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.signos.respiratoria}]]: [[${signos.frecRespiratoria}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.signos.temperatura}]]: [[${signos.temperatura}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.signos.tension}]]: [[${signos.tensionArterial}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.diagnostico.conclusion}]]: [[${diagnostico.conclusion}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.diagnostico.pronostico}]]: [[${diagnostico.pronostico}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.diagnostico.tratamiento}]]: [[${diagnostico.tratamiento}]]</h3>
+                    <hr class="hr">
+                    <h3>[[#{expediente.diagnostico.seguimiento}]]: [[${diagnostico.seguimiento}]]</h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div th:replace="Layout/templates :: footer"></div>
 
 </body>
 
