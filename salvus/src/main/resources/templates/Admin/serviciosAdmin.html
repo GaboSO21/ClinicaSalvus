@@ -17,27 +17,13 @@
 </head>
 
 <body>
-  <div class="nav">
-    <div class="nav-container">
-      <div class="nav-item">
-        <img class="logo" th:src="@{/imgs/Salvus-Logo.png}" alt="" />
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/pacientes}">PACIENTES</a></h3>
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/doctores}">DOCTORES</a></h3>
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/servicios}">SERVICIOS</a></h3>
-      </div>
-    </div>
-  </div>
+
+  <div th:replace="Admin/fragmentosAdmin :: nav"></div>
 
   <section class="content">
     <div class="main-cards">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg">
           <div class="card">
             <div class="card-header">
               <i class="fa-solid fa-house-medical fa-2x"></i>
@@ -48,16 +34,14 @@
             <div class="card-footer bg-success"></div>
           </div>
         </div>
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-body">
+      </div>
+      
+      <div class="row">
+          <div class="col-lg d-flex justify-content-center align-items-center">
               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">
                 Agregar Servicio
               </button>
-            </div>
-            <div class="card-footer bg-success"></div>
           </div>
-        </div>
       </div>
 
       <div class="row">
@@ -74,8 +58,10 @@
                   </p>
                 </div>
                 <div class="btns">
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                    Editar
+                  <button type="button" class="btn btn-warning">
+                    <a th:href="@{/servicios/editar/}+${servicio.idServicio}">
+                      Editar
+                    </a>
                   </button>
                   <button type="button" class="btn btn-danger">
                     <a th:href="@{/servicios/eliminar/}+${servicio.idServicio}" class="btn btn-danger">
@@ -95,23 +81,6 @@
   </section>
 
   <section class="Modals-Windows">
-    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modalEditarTitle">Editar Servicio</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="form" action="">
-              <input type="text" placeholder="Nombre del Servicio" /><br />
-              <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion"></textarea><br />
-              <input class="guardar" type="submit" value="Guardar" /><br />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

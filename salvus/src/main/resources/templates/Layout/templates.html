@@ -20,34 +20,34 @@
             <img class="Salvus-Logo-Nav" th:src="@{/imgs/Salvus-Logo.png}" alt="Salvus-Logo" />
           </a>
         </li>
-        <li class="nav-elements-li">
+        <li sec:authorize="hasRole('ROLE_USER')" class="nav-elements-li">
           <a class="nav-reference" th:href="@{/usuario}">
             <span class="material-symbols-outlined"> manage_accounts </span>
           </a>
         </li>
         <li class="nav-elements-li">
           <a class="nav-reference" th:href="@{/doctores/listado}">
-            <h3>PERSONAL MÉDICO</h3>
+            <h3>[[#{nav.medicos}]]</h3>
           </a>
         </li>
         <li class="nav-elements-li">
           <a class="nav-reference" th:href="@{/servicios/listado}">
-            <h3>SERVICIOS</h3>
+            <h3>[[#{nav.servicios}]]</h3>
           </a>
         </li>
         <li class="nav-elements-li-last">
           <a class="nav-reference" th:href="@{/contacto}">
-            <h3>CONTÁCTO</h3>
+            <h3>[[#{nav.contacto}]]</h3>
           </a>
         </li>
         <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-elements-li-last">
           <a class="nav-reference" th:href="@{/admin}">
-            <h3>ADMIN</h3>
+            <h3>[[#{nav.admin}]]</h3>
           </a>
         </li>
         <li sec:authorize="!isAuthenticated()" class="nav-elements-li-last">
           <a class="nav-reference" th:href="@{/login}">
-            <i id="icon1" class="fa-solid fa-sharp fa-5x fa fa-sign-in"></i>
+            <i style="background-color: inherit;" id="icon1" class="fa-solid fa-sharp fa-5x fa fa-sign-in"></i>
           </a>
         </li>
         <li sec:authorize="isAuthenticated()" class="nav-elements-li-last">
@@ -59,6 +59,25 @@
       </ul>
     </nav>
   </header>
+
+  <div th:fragment="footer">
+    <section class="bottom-info">
+      <div class="sociales">
+        <i><a th:href="@{/(lang=en)}">EN</a></i>
+        <i><a th:href="@{/(lang=es)}">ES</a></i>
+      </div>
+      <div class="footer">
+        <p>© Copyright [[#{aplicacion.titulo}]]</p>
+      </div>
+      <div class="socials">
+        <i class="fa-brands fa-twitter fa-2x"></i>
+        <i class="fa-brands fa-facebook fa-2x"></i>
+        <i class="fa-brands fa-github fa-2x"></i>
+        <i class="fa-solid fa-envelope fa-2x"></i>
+      </div>
+    </section>
+  </div>
+
 </body>
 
 </html>

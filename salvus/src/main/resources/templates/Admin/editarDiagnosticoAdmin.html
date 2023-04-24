@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" th:href="@{/styles/doctoresAdmin.css}" />
+  <title>Inicio</title>
+</head>
+
+<body>
+
+  <div th:replace="Admin/fragmentosAdmin :: nav"></div>
+
+  <section class="content">
+    <div class="main-cards">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <i class="fa-solid fa-user-doctor fa-2x"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Manejo de Pacientes</h5>
+            </div>
+
+            <div style="display: block;" class="modal-content">
+              <div style="display: block;" class="modal-header">
+                <h3 style="display: block;" class="modal-title" id="modalEditarTitle">Editar Diagnostico</h3>
+              </div>
+              <div style="display: block;" class="modal-body">
+
+                <form class="form" method="POST" th:action="@{/diagnostico/guardar}" th:object="${diagnostico}">
+                  <input th:field="*{idDiagnostico}" type="hidden" name="idDiagnostico">
+                  <input th:field="*{conclusion}" type="text" placeholder="Conclusion" name="conclusion"><br />
+                  <input th:field="*{pronostico}" type="text" placeholder="Pronostico" name="pronostico"><br />
+                  <input th:field="*{tratamiento}" type="text" placeholder="Tratamiento" name="tratamiento"><br />
+                  <input th:field="*{seguimiento}" type="text" placeholder="Seguimiento" name="seguimiento"><br />
+                  <input class="guardar" type="submit" value="Guardar" /><br />
+                </form>
+
+              </div>
+
+              <div class="card-footer bg-success"></div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  </div>
+
+</body>
+
+</html>

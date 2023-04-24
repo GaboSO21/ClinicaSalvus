@@ -52,4 +52,12 @@ public class UsuarioController {
         return "redirect:/admin/usuarios";
     }
 
+    @GetMapping("/usuario/editar/{idUsuario}")
+    public String editar(Usuario usuario, Model model) {
+        usuario = usuarioService.getUser(usuario);
+        model.addAttribute("usuario", usuario);
+        model.addAttribute("rol", usuario.getIdRol().getIdRol());
+        return "Admin/editarUsuarioAdmin";
+    }
+
 }

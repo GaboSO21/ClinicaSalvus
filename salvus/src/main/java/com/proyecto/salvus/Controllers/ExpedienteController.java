@@ -21,8 +21,11 @@ public class ExpedienteController {
 
     @GetMapping("/editar/{idExpediente}")
     public String editar(Expediente expediente, Model model) {
-        model.addAttribute("expediente", expedienteService.getExpediente(expediente));
-        return "agregar";
+        expediente = expedienteService.getExpediente(expediente);
+        model.addAttribute("expediente", expediente);
+        model.addAttribute("idSignos", expediente.getIdSignos().getIdSignos());
+        model.addAttribute("idDiagnostico", expediente.getIdDiagnostico().getIdDiagnostico());
+        return "Admin/editarExpedienteAdmin";
     }
 
     @PostMapping("/guardar")

@@ -17,27 +17,13 @@
 </head>
 
 <body>
-  <div class="nav">
-    <div class="nav-container">
-      <div class="nav-item">
-        <img class="logo" th:src="@{/imgs/Salvus-Logo.png}" alt="" />
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/pacientes}">PACIENTES</a></h3>
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/doctores}">DOCTORES</a></h3>
-      </div>
-      <div class="nav-item">
-        <h3 class="nav-txt"><a th:href="@{/admin/servicios}">SERVICIOS</a></h3>
-      </div>
-    </div>
-  </div>
+
+  <div th:replace="Admin/fragmentosAdmin :: nav"></div>
 
   <section class="content">
     <div class="main-cards">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col">
           <div class="card">
             <div class="card-header">
               <i class="fa-solid fa-house-medical fa-2x"></i>
@@ -48,14 +34,21 @@
             <div class="card-footer bg-success"></div>
           </div>
         </div>
-        <div class="col-lg-5">
-          <div class="card">
+      </div>
+
+      <div class="d-flex">
+        <div class="col-lg">
+          <div class="card d-flex flex-row">
             <div class="card-body">
               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">
                 Agregar Usuario
               </button>
             </div>
-            <div class="card-footer bg-success"></div>
+            <div class="card-body">
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarAdmin">
+                Agregar Administrador
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -74,8 +67,10 @@
                   </p>
                 </div>
                 <div class="btns">
-                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                    Editar
+                  <button type="button" class="btn btn-warning">
+                    <a th:href="@{/usuario/editar/}+${usuario.idUsuario}">
+                      Editar
+                    </a>
                   </button>
                   <button type="button" class="btn btn-danger">
                     <a th:href="@{/usuario/eliminar/}+${usuario.idUsuario}" class="btn btn-danger">
@@ -95,23 +90,6 @@
   </section>
 
   <section class="Modals-Windows">
-    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modalEditarTitle">Editar Servicio</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="form" action="">
-              <input type="text" placeholder="Nombre del Servicio" /><br />
-              <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion"></textarea><br />
-              <input class="guardar" type="submit" value="Guardar" /><br />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -127,6 +105,28 @@
               <input name="username" type="text" placeholder="Cedula" /><br />
               <input name="contrasenna" type="text" placeholder="Password" /><br />
               <input type="hidden" th:value="${userRol}" name="idRol" /><br />
+              <input class="guardar" type="submit" value="Guardar" /><br />
+            </form>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregarAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAgregarTitle">
+              Agregar Administrador
+            </h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form" method="POST" th:action="@{/usuario/guardar}">
+              <input name="username" type="text" placeholder="Usuario" /><br />
+              <input name="contrasenna" type="text" placeholder="Password" /><br />
+              <input type="hidden" th:value="${adminRol}" name="idRol" /><br />
               <input class="guardar" type="submit" value="Guardar" /><br />
             </form>
           </div>

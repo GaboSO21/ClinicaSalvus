@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="stylesheet" th:href="@{/styles/index.css}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{/styles/user.css}" />
 
     <title>Clinica Salvus | Personal Medico</title>
 </head>
 
 <body>
+
     <header th:replace="Layout/templates :: header"></header>
 
 
-    <div>
-
-        <p>[[${usuario.nombre}]]</p>
-        <p>[[${signos.imc}]]</p>
-        <p>[[${diagnostico.conclusion}]]</p>
-
-    </div>
 
 </body>
 

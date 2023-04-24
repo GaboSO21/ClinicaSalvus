@@ -31,10 +31,10 @@ public class ServicioController {
         return "redirect:/admin/servicios";
     }
 
-    @GetMapping("/editar/{idDoctor}")
+    @GetMapping("/editar/{idServicio}")
     public String editar(Servicio servicio, Model model) {
-        model.addAttribute("doctor", servicioService.getServicio(servicio));
-        return "agregar";
+        model.addAttribute("servicio", servicioService.getServicio(servicio));
+        return "Admin/editarServicioAdmin";
     }
 
     @PostMapping("/guardar")

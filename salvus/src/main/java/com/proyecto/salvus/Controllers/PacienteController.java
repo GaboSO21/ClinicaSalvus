@@ -27,8 +27,10 @@ public class PacienteController {
 
     @GetMapping("/editar/{cedula}")
     public String editar(Paciente paciente, Model model) {
-        model.addAttribute("paciente", PacienteService.getPaciente(paciente));
-        return "agregar";
+        paciente = PacienteService.getPaciente(paciente);
+        model.addAttribute("paciente", paciente);
+        model.addAttribute("idExpediente", paciente.getIdExpediente().getIdExpediente());
+        return "Admin/editarPacienteAdmin";
     }
 
     @PostMapping("/guardar")

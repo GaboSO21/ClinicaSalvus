@@ -19,10 +19,10 @@ public class SignosController {
         this.signoVitalService = signoVitalService;
     }
 
-    @GetMapping("/editar/{idSigno}")
+    @GetMapping("/editar/{idSignos}")
     public String editar(SignoVital signoVital, Model model) {
-        model.addAttribute("signo", signoVitalService.getSignoVital(signoVital));
-        return "agregar";
+        model.addAttribute("signos", signoVitalService.getSignoVital(signoVital));
+        return "Admin/editarSignosAdmin";
     }
 
     @PostMapping("/guardar")

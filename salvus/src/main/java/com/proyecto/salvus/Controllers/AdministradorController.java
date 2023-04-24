@@ -37,10 +37,9 @@ public class AdministradorController {
     public String pacientes(Model model) {
         var pacientes = pacienteService.selectPacientes();
         var signos = signoVitalService.selectSignoVitals();
-        int next = (signos.get(signos.size()-1).getIdSignos()) + 1;
+        int next = (signos.get(signos.size()-1).getIdSignos());
         model.addAttribute("pacientes", pacientes);
         model.addAttribute("next", next);
-        System.out.println(next);
         return "Admin/pacienteAdmin";
     }
 
@@ -54,6 +53,11 @@ public class AdministradorController {
     public String listar(Model model) {
         model.addAttribute("servicios", servicioService.selectServicios());
         return "Admin/serviciosAdmin";
+    }
+
+    @GetMapping("/admin/contacto")
+    public String contacto() {
+        return "Admin/contactoAdmin";
     }
 
     @GetMapping("/admin/usuarios")

@@ -34,7 +34,7 @@ public class DoctorController {
     @GetMapping("/editar/{idDoctor}")
     public String editar(Doctor doctor, Model model) {
         model.addAttribute("doctor", doctorService.getDoctor(doctor));
-        return "agregar-medico";
+        return "Admin/editarDoctoresAdmin";
     }
 
     @PostMapping("/guardar")

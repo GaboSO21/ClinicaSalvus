@@ -19,10 +19,10 @@ public class DiagnosticoController {
         this.DiagnosticoService = DiagnosticoService;
     }
 
-    @GetMapping("/editar/{idDoctor}")
+    @GetMapping("/editar/{idDiagnostico}")
     public String editar(Diagnostico Diagnostico, Model model) {
         model.addAttribute("diagnostico", DiagnosticoService.getDiagnostico(Diagnostico));
-        return "agregar";
+        return "Admin/editarDiagnosticoAdmin";
     }
 
     @PostMapping("/guardar")

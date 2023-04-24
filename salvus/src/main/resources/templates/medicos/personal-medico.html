@@ -17,27 +17,28 @@
 <body>
   <header th:replace="Layout/templates :: header"></header>
 
-  <body>
-    <div th:each=" doctor : ${doctores}" class="background-container">
-      <div class="container">
-        <div class="container-main-info">
-          <img class="foto" th:src="${doctor.img}" alt="img" />
-          <h1 class="nombre">[[${doctor.nombre}]] [[${doctor.primerApellido}]] [[${doctor.segundoApellido}]]</h1>
+  <div th:each=" doctor : ${doctores}" class="background-container">
+    <div class="container">
+      <div class="container-main-info">
+        <img class="foto" th:src="${doctor.img}" alt="img" />
+        <h1 class="nombre">[[${doctor.nombre}]] [[${doctor.primerApellido}]] [[${doctor.segundoApellido}]]</h1>
+      </div>
+      <div class="container-sec-info">
+        <div class="container-sec-info-especidalidades">
+          <p>[[${doctor.especialidades}]]</p>
         </div>
-        <div class="container-sec-info">
-          <div class="container-sec-info-especidalidades">
-            <p>[[${doctor.especialidades}]]</p>
-          </div>
-          <div class="container-sec-info-titulos">
-            <p>[[${doctor.titulos}]]</p>
-          </div>
-          <div class="container-sec-info-servicios">
-            <p>[[${doctor.servicios}]]</p>
-          </div>
+        <div class="container-sec-info-titulos">
+          <p>[[${doctor.titulos}]]</p>
+        </div>
+        <div class="container-sec-info-servicios">
+          <p>[[${doctor.servicios}]]</p>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <div th:replace="Layout/templates :: footer"></div>
+
 </body>
 
 </html>

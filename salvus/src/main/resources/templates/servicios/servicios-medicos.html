@@ -18,7 +18,7 @@
 <body>
   <header th:replace="Layout/templates :: header"></header>
   <section class="sec1">
-    <h2 class="sec1-title">¿Qué te ofrecemos en Salvus?</h2>
+    <h2 class="sec1-title">[[#{servicios.titulo}]]</h2>
 
     <div class="parent">
       <div th:each="servicio : ${servicios}" class="data1-container">
@@ -33,46 +33,9 @@
         </div>
       </div>
   </section>
-  <section class="sec2">
-    <ol class="carousel__viewport">
-      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <div class="carousel-content-container">
-          <div class="carousel-content">
-            <img class="carousel-img" th:src="@{/imgs/radiografia.png}" alt="" />
-            <h3 class="carousel-txt">Radiografías</h3>
-          </div>
-        </div>
-      </li>
-      <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <div class="carousel-content-container">
-          <div class="carousel-content">
-            <img class="carousel-img" th:src="@{/imgs/Medicina General.png}" alt="" />
-            <h3 class="carousel-txt">Medicina General</h3>
-          </div>
-        </div>
-      </li>
-      <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <div class="carousel-content-container">
-          <div class="carousel-content">
-            <img class="carousel-img" th:src="@{/imgs/odontologia.png}" alt="" />
-            <h3 class="carousel-txt">Odontologia</h3>
-          </div>
-        </div>
-      </li>
-      <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <div class="carousel-content-container">
-          <div class="carousel-content">
-            <img class="carousel-img" th:src="@{/imgs/cirugias.png}" alt="" />
-            <h3 class="carousel-txt">Cirugias</h3>
-          </div>
-        </div>
-      </li>
-    </ol>
-  </section>
+
+  <div th:replace="Layout/templates :: footer"></div>
+
 </body>
 
 </html>

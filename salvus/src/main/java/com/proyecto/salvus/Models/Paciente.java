@@ -12,6 +12,7 @@ public class Paciente {
     private String cedula;
 
     private String nombre;
+    private String correo;
     private String direccion;
     private String telefono;
     private int edad;
@@ -24,23 +25,25 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(String nombre, String direccion, int edad, String sexo, String telefono, Expediente idExpediente) {
+    public Paciente(String nombre, String direccion, int edad, String sexo, String telefono, Expediente idExpediente, String correo) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.edad = edad;
         this.sexo = sexo;
         this.idExpediente = idExpediente;
+        this.correo = correo;
     }
 
     public Paciente(String cedula, String nombre, String direccion, int edad, String sexo, String telefono,
-            Expediente idExpediente) {
+            Expediente idExpediente, String correo) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.edad = edad;
         this.sexo = sexo;
         this.idExpediente = idExpediente;
+        this.correo = correo;
     }
 
 }

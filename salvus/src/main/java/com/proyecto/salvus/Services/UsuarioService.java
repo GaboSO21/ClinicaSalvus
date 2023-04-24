@@ -49,5 +49,9 @@ public class UsuarioService implements UserDetailsService {
     public void deleteUser(Usuario usuario) {
         usuarioRepository.delete(usuario);
     }
+    
+    public Usuario getUser(Usuario usuario) {
+        return usuarioRepository.findById(usuario.getIdUsuario()).orElse(null);
+    }
 
 }

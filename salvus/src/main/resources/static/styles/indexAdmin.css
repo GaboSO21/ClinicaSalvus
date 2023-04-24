@@ -21,9 +21,9 @@
 }
 
 .nav-txt-container{
-    font-size: 20px;
+    font-size: 8px;
     display: flex;
-    width: 65%;
+    width: 100%;
     margin: 0 auto;
     justify-content: space-between;
 }
