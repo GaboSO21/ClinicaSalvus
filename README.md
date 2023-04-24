@@ -20,12 +20,12 @@
 ### Entidades:  
 * Doctores
 * Paciente
+* Servicios
 * Expediente
-* * Examen Fisico 
-* * * Signos Vitales
-* * * Diagnostico 
+* * Signos Vitales
+* * Diagnostico 
 * Usuarios
-* Administradores
+* Roles
 ### Diagrama: 
 ![Diagrama](https://github.com/GaboSO21/ClinicaSalvus/blob/main/diagrama/diagramaImg.png?raw=true "Diagrama")
 
