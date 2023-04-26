@@ -7,17 +7,17 @@
   </div>
 <hr>
 
-## Contenido del proyecto:
-* Base de Datos en MySql
+## Project content:
+* MySql database
 * Java
 * Spring Boot
-* Patron MVC
+* MVC pattern
 * HTML
 * CSS
 * Bootstrap
 ---
-## Diagrama Entidad-Relacion:
-### Entidades:  
+## Entity-Relationship Diagram:
+### Entities:  
 * Doctores
 * Paciente
 * Servicios
@@ -26,7 +26,7 @@
 * * Diagnostico 
 * Usuarios
 * Roles
-### Diagrama: 
+### Diagram: 
 ![Diagrama](https://github.com/GaboSO21/ClinicaSalvus/blob/main/diagrama/diagramaImg.png?raw=true "Diagrama")
 
 ## LICENSE
